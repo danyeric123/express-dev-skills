@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="stylesheets/style.css">
-  <title><%= title %></title>
+  <title>Express To-Do</title>
 </head>
 <body>
-  <h1><%= title %></h1>
-  <a href="/devSkills">Dev Skills List</a>
+  <h1>New Dev-Skill</h1>
+  <form action="/todos" method="POST" autocomplete="off">
+    <input type="text" name="text">
+    <button type="submit">Save Dev-Skill</button>
+  </form>
 </body>
 </html>

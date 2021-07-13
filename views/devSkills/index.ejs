@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head.ejs") %> 
+<body>
+  <h1>Dev Skills as of <%= time %></h1>
+    <% if(error) { %>
+      <h2><%= error %></h2>
+    <% } %>
+    <ul>
+      <% devSkills.forEach(function(devSkill) { %>
+        <li>
+          <form 
+            action="/devSkills/<%= devSkill._id %>?_method=DELETE"
+            class="delete-form"
+            method="POST"
+          >
+            <button type="submit">X</button>
+          </form>
+          <a href="/devSkills/<%= devSkill._id %>"><%= devSkill.text %></a>
+        </li>
+      <% }) %>
+    </ul>
+    <a href="/devSkills/new">Add To-Do</a>
+</body>
+</html>
