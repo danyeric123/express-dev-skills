@@ -17,9 +17,11 @@
             <button type="submit">X</button>
           </form>
           <a href="/devSkills/<%= devSkill._id %>"><%= devSkill.text %></a>
+          - 
+          <%= devSkill.proficiency ? 'Proficient' : 'Novice' %>
         </li>
       <% }) %>
     </ul>
-    <a href="/devSkills/new">Add To-Do</a>
+    <a href="/devSkills/new">Add Dev Skill</a>
 </body>
 </html>

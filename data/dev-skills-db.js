@@ -6,9 +6,9 @@ export {
 }
 
 const devSkills = [
-  {text: 'HTML', _id: 125223},
-  {text: 'CSS', _id: 127904},
-  {text: 'Javascript', _id: 139608},
+  {text: 'HTML', proficiency: true, _id: 125223},
+  {text: 'CSS',proficiency: true, _id: 127904},
+  {text: 'Javascript',proficiency: true, _id: 139608},
 ]
 
 const find = (conditions, callback) => {
@@ -54,6 +54,7 @@ function create(devSkill, callback) {
   // Add the id
   devSkill._id = Date.now() % 1000000
   // New devSkills wouldn't be done
+  devSkill.proficiency = false
   devSkills.push(devSkill)
   return callback(null, devSkill)
 }

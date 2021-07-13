@@ -1,9 +1,9 @@
 export {
 	index,
   show,
-  newTodo as new,
+  newDevSkill as new,
   create,
-  deleteTodo as delete,
+  deleteDevSkill as delete,
 }
 import * as devSkillDb from '../data/dev-skills-db.js'
 
@@ -17,14 +17,14 @@ function index(req, res) {
   })
 }
 
-function newTodo(req, res) {
+function newDevSkill(req, res) {
   res.render('devSkills/new')
 }
 
 function show(req, res) {
-  devSkillDb.findById(req.params.id, function(error, todo) {
+  devSkillDb.findById(req.params.id, function(error, devSkill) {
     res.render('devSkills/show', {
-      todo: todo,
+      devSkill: devSkill,
       error: error
     })
   })
@@ -32,14 +32,14 @@ function show(req, res) {
 
 function create(req, res) {
   console.log(req.body)
-  devSkillDb.create(req.body, function(error, todo) {
+  devSkillDb.create(req.body, function(error, devSkill) {
 		// Notice we are doing a redirect here!
     res.redirect('/devSkills')
   })
 }
 
-function deleteTodo(req, res) {
-  devSkillDb.findByIdAndDelete(req.params.id, function(error, todo) {
+function deleteDevSkill(req, res) {
+  devSkillDb.findByIdAndDelete(req.params.id, function(error, devSkill) {
     res.redirect('/devSkills')
   })
 }
