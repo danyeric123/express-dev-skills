@@ -2,10 +2,12 @@
 <html lang="en">
   <%- include("../partials/head.ejs") %> 
 <body>
-  <h1>New Dev-Skill</h1>
-  <form action="/devSkills" method="POST" autocomplete="off">
+  <div class="text-center">
+    <h1>New Dev-Skill</h1>
+   <form action="/devSkills" method="POST" autocomplete="off">
     <input type="text" name="text">
-    <button type="submit">Save Dev-Skill</button>
+    <button class="btn btn-primary" type="submit">Save Dev-Skill</button>
   </form>
+  </div>
 </body>
 </html>

@@ -2,20 +2,22 @@
 <html lang="en">
   <%- include("../partials/head.ejs") %> 
 <body>
-	<h1>Dev Skills</h1>
-  <% if(error) { %>
-    <h2><%= error %></h2>
-  <% } else { %>
-    <h2>Dev Skill #<%= devSkill._id %></h1>
-    <h3><%= devSkill.text %></h3>
-    <h3><%= devSkill.proficiency ? 'Proficient' : 'Novice' %></h3>
-    <form 
-            action="/devSkills/<%= devSkill._id %>?_method=DELETE"
-            class="delete-form"
-            method="POST"
-          >
-    <button type="submit">Delete Skill</button>
-  <% } %>
-	<a href="/devSkills">Go back</a>
+  <div class="text-center">
+    <h1>Dev Skills</h1>
+    <% if(error) { %>
+      <h2><%= error %></h2>
+    <% } else { %>
+      <h2>Dev Skill #<%= devSkill._id %></h1>
+      <h3><%= devSkill.text %></h3>
+      <h3><%= devSkill.proficiency ? 'Proficient' : 'Novice' %></h3>
+      <form 
+              action="/devSkills/<%= devSkill._id %>?_method=DELETE"
+              class="delete-form"
+              method="POST"
+            >
+      <button class="btn btn-danger" type="submit">Delete Skill</button>
+    <% } %>
+    <a href="/devSkills">Go back</a>
+  </div>
 </body>
 </html>
