@@ -3,7 +3,7 @@
 <%- include("../partials/head.ejs") %> 
 <body>
   <div class="text-center">
-    <h1>Dev Skills as of <%= time %></h1>
+    <h1>Dev Skills as of <%= date %></h1>
     <% if(error) { %>
       <h2><%= error %></h2>
     <% } %>
@@ -17,7 +17,7 @@
           >
             <button class="btn btn-danger" type="submit">X</button>
           </form>
-          <a href="/devSkills/<%= devSkill._id %>"><%= devSkill.text %></a>
+          <a href="/devSkills/<%= devSkill._id %>"><%= devSkill.skill %></a>
           - 
           <%= devSkill.proficiency ? 'Proficient' : 'Novice' %>
         </li>

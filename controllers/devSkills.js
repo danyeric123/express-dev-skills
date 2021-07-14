@@ -12,7 +12,7 @@ function index(req, res) {
     res.render('devSkills/index', {
       devSkills: devSkills,
       error: error,
-      time: req.time
+      date: req.date
     })
   })
 }
